@@ -42,8 +42,14 @@ public class Pizza {
         // your code goes here
         if(!toppings){
             this.toppings = true;
-            int price = 70;
-            setPrice(price);
+            int Veggprice = 70;
+            int nonVegg = 120;
+            if(this.isVeg){
+                setPrice(Veggprice);
+            }
+            else{
+                setPrice(nonVegg);
+            }
         }
     }
 
