@@ -1,10 +1,10 @@
 package com.driver;
 
 public class DeluxePizza extends Pizza {
-    Boolean flag = true;
 
     public DeluxePizza(Boolean isVeg) {
         super(isVeg);
+        super.setPrice(150);
         // your code goes here
     }
 
@@ -16,13 +16,5 @@ public class DeluxePizza extends Pizza {
     @Override
     public void addExtraToppings() {
 //        super.addExtraToppings();
-    }
-
-    public void addTakeaway(){
-        // your code goes here
-        if(flag){
-            flag = false;
-            super.addTakeaway();
-        }
     }
 }

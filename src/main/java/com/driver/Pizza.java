@@ -14,15 +14,10 @@ public class Pizza {
         else{
             setPrice(400);
         }
-        // your code goes here
     }
 
     public void setPrice(int price) {
-        if(this.isVeg){
-            this.price = this.price + price;
-        }else{
-            this.price = this.price + price;
-        }
+        this.price = price;
     }
 
     public int getPrice(){
