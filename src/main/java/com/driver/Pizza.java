@@ -4,7 +4,7 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
-    private String bill = "";
+    private String bill;
 
     private boolean takeaway = false;
     private boolean toppings = false;
@@ -87,7 +87,7 @@ public class Pizza {
             BILL += "Paperbag Added: "+20+"\n";
         }
         BILL += "Total Price: "+this.price+"\n";
-        this.bill = this.bill + BILL;
+        this.bill = BILL;
         return this.bill;
     }
 
