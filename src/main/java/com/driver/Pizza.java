@@ -15,11 +15,9 @@ public class Pizza {
         this.isVeg = isVeg;
         if(isVeg){
             setPrice(300);
-            setBill("Base Price Of The Pizza: "+300+"\n");
         }
         else{
             setPrice(400);
-            setBill("Base Price Of The Pizza: "+400+"\n");
         }
     }
 
@@ -34,7 +32,6 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if(!cheese){
-            setBill("Extra Cheese Added: "+80+"\n");
             this.cheese = true;
             int price = 80;
             setPrice(price);
@@ -48,11 +45,9 @@ public class Pizza {
             int Veggprice = 70;
             int nonVegg = 120;
             if(this.isVeg){
-                setBill("Extra Toppings Added: "+70+"\n");
                 setPrice(Veggprice);
             }
             else{
-                setBill("Extra Toppings Added: "+120+"\n");
                 setPrice(nonVegg);
             }
         }
@@ -61,7 +56,6 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if(!takeaway){
-            setBill("Paperbag Added: "+20+"\n");
             this.takeaway = true;
             int price = 20;
             setPrice(price);
@@ -70,11 +64,24 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        setBill("Total Price: "+String.valueOf(this.price)+"\n");
+        String BILL = "";
+        if(cheese){
+            BILL += "Extra Cheese Added: "+80+"\n";
+        }
+        if(toppings){
+            if(this.isVeg){
+                BILL += "Extra Toppings Added: "+70+"\n";
+            }
+            else{
+                BILL += "Extra Toppings Added: "+120+"\n";
+            }
+        }
+        if(takeaway){
+            BILL += "Paperbag Added: "+20+"\n";
+        }
+        BILL += "Total Price: "+this.price+"\n";
+        this.bill = this.bill + BILL;
         return this.bill;
     }
 
-    public void setBill(String bill) {
-        this.bill = this.bill + bill;
-    }
 }
